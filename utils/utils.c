@@ -6,7 +6,7 @@
 /*   By: nklingsh <nklingsh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 16:58:34 by nklingsh          #+#    #+#             */
-/*   Updated: 2023/05/12 16:59:03 by nklingsh         ###   ########.fr       */
+/*   Updated: 2023/05/12 18:57:19 by nklingsh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,4 +63,17 @@ int	number_of_occ(char *map_str)
 	close(fd);
 	free(str);
 	return (compteur);
+}
+
+void	free_map(char **map, char *map_str)
+{
+	int	i;
+
+	i = 0;
+	while (i < number_of_occ(map_str))
+	{
+		free(map[i]);
+		i++;
+	}
+	free(map);
 }

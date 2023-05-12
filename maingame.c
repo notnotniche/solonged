@@ -6,7 +6,7 @@
 /*   By: nklingsh <nklingsh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 15:23:58 by nklingsh          #+#    #+#             */
-/*   Updated: 2023/05/12 17:16:11 by nklingsh         ###   ########.fr       */
+/*   Updated: 2023/05/12 18:52:15 by nklingsh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,17 @@ int	ft_check_img(void)
 	return (1);
 }
 
-int	valid_world(char *argv, char *valid_input, t_player x, char **map)
+int	valid_world(char *argv, char *valid_input, char **map)
 {
+	t_player	x;
+
 	if (valid_map(valid_input, argv, map[0]) == 0)
 	{
 		free_map(map, argv);
 		return (0);
 	}
-	else if (recursion(map, x.y, x.x, argv) != 1)
+	x = found_p(map, argv);
+	if (recursion(map, x.y, x.x, argv) != 1)
 	{
 		printf("Error : map non valide\n");
 		free_map(map, argv);
@@ -50,7 +53,6 @@ int	main(int argc, char **argv)
 	t_data		game;
 	char		**map;
 	int			i;
-	t_player	x;
 
 	i = 0;
 	if (argc != 2)
@@ -60,8 +62,7 @@ int	main(int argc, char **argv)
 	map = char_map(argv[1]);
 	if (!map)
 		return (0);
-	x = found_p(map, argv[1]);
-	if (valid_world(argv[1], "0E1PC", x, map) != 1)
+	if (valid_world(argv[1], "0E1PC", map) != 1)
 		return (0);
 	free_map(map, argv[1]);
 	ft_init_map(&game);
