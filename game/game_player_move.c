@@ -6,7 +6,7 @@
 /*   By: nklingsh <nklingsh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 16:38:31 by nklingsh          #+#    #+#             */
-/*   Updated: 2023/05/11 18:57:07 by nklingsh         ###   ########.fr       */
+/*   Updated: 2023/05/12 17:39:25 by nklingsh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_move_up(t_data *game, int key)
 	{
 		if (i.y > 0)
 		{
-			if (game->map.map[i.y - 1][i.x] == 'E' )
+			if (game->map.map[i.y - 1][i.x] == 'E')
 				ft_exit(game);
 			if (game->map.map[i.y - 1][i.x] == 'C')
 				game->map.coin = game->map.coin - 1;

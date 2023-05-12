@@ -6,7 +6,7 @@
 /*   By: nklingsh <nklingsh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 15:23:58 by nklingsh          #+#    #+#             */
-/*   Updated: 2023/05/12 16:59:22 by nklingsh         ###   ########.fr       */
+/*   Updated: 2023/05/12 17:16:11 by nklingsh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ int	ft_check_img(void)
 
 int	valid_world(char *argv, char *valid_input, t_player x, char **map)
 {
-	printf("-------xxxxx-----------");
 	if (valid_map(valid_input, argv, map[0]) == 0)
 	{
 		free_map(map, argv);
