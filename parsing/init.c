@@ -6,7 +6,7 @@
 /*   By: nklingsh <nklingsh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 14:18:33 by nklingsh          #+#    #+#             */
-/*   Updated: 2023/05/12 13:54:12 by nklingsh         ###   ########.fr       */
+/*   Updated: 2023/05/12 17:00:19 by nklingsh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	sizeline(char *map_str)
 	if (fd == -1)
 		return (printf("invalid fd"), 0);
 	str = get_next_line(fd);
-	while (str[i] != '\n')
+	while (str[i] != '\n' && str[i])
 		i++;
 	while (str)
 	{

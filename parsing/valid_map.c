@@ -6,7 +6,7 @@
 /*   By: nklingsh <nklingsh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:24:51 by nklingsh          #+#    #+#             */
-/*   Updated: 2023/05/12 16:44:41 by nklingsh         ###   ########.fr       */
+/*   Updated: 2023/05/12 16:53:13 by nklingsh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,9 +95,10 @@ int	valid_map(char *valid_word, char *map_str, char *line)
 
 	(void)valid_word;
 	len = number_of_occ(map_str);
-	if (size_str(line) == 0)
+	printf("len ----> %d \n", len);
+	if (size_str(line) == 0 || len == 0)
 		return (printf("Error : map cant have 0 line"));
-	if (valid_start(map_str) == 0 || number_of_occ(map_str) == 0)
+	if (valid_start(map_str) == 0 )
 		return (printf("Error :map is not valid"), 0);
 	if (number_of_occ(map_str) == size_str(line))
 		return (printf("Error :map is square"), 0);

@@ -6,7 +6,7 @@
 /*   By: nklingsh <nklingsh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 15:23:58 by nklingsh          #+#    #+#             */
-/*   Updated: 2023/05/12 13:58:40 by nklingsh         ###   ########.fr       */
+/*   Updated: 2023/05/12 16:59:22 by nklingsh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,22 +31,13 @@ int	ft_check_img(void)
 
 int	valid_world(char *argv, char *valid_input, t_player x, char **map)
 {
-	int	fd;
-
-	if (ft_check_extention(argv) == -1)
-		return (0);
-	fd = open(argv, O_RDONLY);
-	if (fd == -1)
-	{
-		close(fd);
-		return (printf("invalid fd"), 0);
-	}
+	printf("-------xxxxx-----------");
 	if (valid_map(valid_input, argv, map[0]) == 0)
 	{
 		free_map(map, argv);
 		return (0);
 	}
-	if (recursion(map, x.y, x.x, argv) != 1)
+	else if (recursion(map, x.y, x.x, argv) != 1)
 	{
 		printf("Error : map non valide\n");
 		free_map(map, argv);
